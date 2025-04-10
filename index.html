@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechSparks Innovation Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+      
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+     
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe, rgba(0, 0, 0, 0.5)); /* Adding black gradient with transparency */
+            color: #333;
+            line-height: 1.6;
+        
+          
+          
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("7579950-uhd_4096_2160_25fps.mp4");
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ffffff;
+      z-index: 1;
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      animation: slideIn 1s ease-out 1s forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    header .cta {
+        background: linear-gradient(to right, #4facfe, #00f2fe, rgba(0, 0, 0, 0.5)); /* Adding black gradient with transparency */
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      z-index: 1;
+      transition: background-color 0.3s ease;
+      opacity: 0;
+      animation: fadeInButton 1s ease-out 1.5s forwards;
+    }
+
+    @keyframes fadeInButton {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    header .cta:hover {
+      background-color: #e6b800;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #333;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Section Style */
+    .section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 80px;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .service-item {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+    }
+
+    .service-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px 5px rgba(0,0,0,0.5);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    footer a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    footer .social-icons {
+      margin-top: 20px;
+    }
+
+    footer .social-icons i {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-icons i:hover {
+      color: #ffcc00;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        z-index: index 1;
+        text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
+        opacity: 0;
+        animation: fadeInText 2s ease-out forwards;
+      }
+
+      header .cta {
+        font-size: 1rem;
+        padding: 10px 15px;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .service-item {
+        padding: 15px;
+      }
+
+      footer .social-icons i {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .cta {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+
+      .section h2 {
+        font-size: 1.5rem;
+      }
+
+      .service-item {
+        padding: 10px;
+      }
+
+      footer .social-icons i {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#vision">Vision & Mission</a></li>
+      <li><a href="#innovation">Innovation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <video autoplay muted loop id="background-video">
+        <source src="7579950-uhd_4096_2160_25fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    <h1>Welcome to TechSparks Innovation Hub</h1>
+    <a href="#services" class="cta">Explore Our Services</a>
+  </header>
+
+  <!-- About Us Section -->
+  <div id="about" class="section">
+    <h2>About Us</h2>
+    <p>TechSparks Innovation Hub is dedicated to fostering digital innovation and providing training, mentorship, and networking opportunities for the next generation of entrepreneurs.</p>
+  </div>
+  
+  <!-- Vision & Mission Section -->
+  <div id="vision" class="section">
+    <h2>Our Vision & Mission</h2>
+    <p><strong>Vision:</strong> To empower individuals through technology by providing innovative solutions and opportunities for growth.</p>
+    <p><strong>Mission:</strong> We aim to create an ecosystem where creativity, innovation, and entrepreneurship thrive, fostering the development of cutting-edge solutions that drive social and economic change.</p>
+  </div>
+
+  <!-- Services Section -->
+  <div id="services" class="section">
+    <h2>Our Services</h2>
+    <p>We offer a variety of services that include training programs in:</p>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>AI Training</h3>
+        <p>Learn the fundamentals of artificial intelligence and machine learning.</p>
+      </div>
+      <div class="service-item">
+        <h3>Cloud Computing</h3>
+        <p>Get hands-on experience with cloud technologies and platforms.</p>
+      </div>
+      <div class="service-item">
+        <h3>Business Development</h3>
+        <p>Develop your business acumen and learn how to pitch your ideas effectively.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Innovation Section -->
+  <div id="innovation" class="section">
+    <h2>Innovation</h2>
+    <p>Our innovation labs provide hands-on experience with the latest technologies to help you build real-world solutions that drive change.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: yolandapetunia8@gmail.com</p>
+    <p>Phone: +27 679 045 997</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 TechSparks Innovation Hub</p>
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <!-- Font Awesome (for social icons) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>
